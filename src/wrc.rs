@@ -53,14 +53,14 @@ mod tests {
     use super::*;
     const TEST_STR: &str = r#"Project Gutenberg™ eBooks are often created from several printed
 editions, all of which are confirmed as not protected by copyright in
-the U.S. unless a copyright notice is included. Thus, we do not
+the U.S. unless 😫 a copyright notice is included. Thus, we do not
 necessarily keep eBooks in compliance with any particular paper
 edition."#;
 
     #[test]
     fn test_count_chars() {
         let count = Wrc::count_chars(TEST_STR);
-        assert_eq!(271, count)
+        assert_eq!(273, count)
     }
 
     #[test]
@@ -72,12 +72,12 @@ edition."#;
     #[test]
     fn test_count_words() {
         let count = Wrc::count_words(TEST_STR);
-        assert_eq!(43, count)
+        assert_eq!(44, count)
     }
 
     #[test]
     fn test_count_bytes() {
         let count = Wrc::count_bytes(TEST_STR);
-        assert_eq!(273, count)
+        assert_eq!(278, count)
     }
 }

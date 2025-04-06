@@ -8,7 +8,7 @@ struct WrsArgs {
     #[arg(short, long)]
     bytes: bool,
 
-    /// prints the character count
+    /// prints character count
     #[arg(short, long)]
     char: bool,
 
