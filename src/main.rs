@@ -43,7 +43,7 @@ fn main() {
     let config = Wrc::new(filename.to_string(), mode);
 
     match config.count() {
-        Ok(count) => println!("{}: {}", count, config.filename),
+        Ok(count) => config.print(count),
         Err(e) => {
             eprintln!("{}", e);
         }

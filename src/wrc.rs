@@ -30,6 +30,14 @@ impl Wrc {
             WrcMode::Lines => Ok(Self::count_lines(&contents)),
         }
     }
+    pub fn print(&self, val: usize) {
+        match self.mode {
+            WrcMode::Bytes => println!("{}\n  > {} bytes", self.filename, val),
+            WrcMode::Words => println!("{}\n  > {} words", self.filename, val),
+            WrcMode::Chars => println!("{}\n  > {} characters", self.filename, val),
+            WrcMode::Lines => println!("{}\n  > {} lines", self.filename, val),
+        }
+    }
 
     fn count_chars(contents: &str) -> usize {
         contents.char_indices().count()
